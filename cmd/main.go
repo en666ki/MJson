@@ -1,7 +1,7 @@
 package main
 
 import (
-    "github.com/en666ki/MJson/internal/json_reader"
+    "github.com/en666ki/MJson/pkg/json_reader"
 )
 
 func main() {
