@@ -3,18 +3,17 @@ package json_reader
 import (
     "encoding/json"
     "os"
-    "errors"
 )
 
-func Parse(input string) (string, error) {
+func Parse(input string) (bool, error) {
     var data, err = os.ReadFile(input)
     if err != nil {
-        return "", err
+        return false, err
     }
     if !json.Valid(data) {
-        return "", errors.New("Invalid json")
+        return false, nil
     }
-    return string(data[:]), nil
+    return true, nil
 }
 
 
